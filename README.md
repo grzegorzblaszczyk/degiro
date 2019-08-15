@@ -1,5 +1,7 @@
 # DeGiro
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e38cac1a8e6d4a97bdcaf60f4635c63f)](https://app.codacy.com/app/grzegorzblaszczyk/degiro?utm_source=github.com&utm_medium=referral&utm_content=grzegorzblaszczyk/degiro&utm_campaign=Badge_Grade_Dashboard)
+
 A simple Ruby client for [DeGiro](https://www.degiro.co.uk/). Inspired by this [javascript client](https://github.com/pladaria/degiro).
 
 DeGiro's API is likely to change in the future and I make no guarantees that I'll be making changes to keep the client up-to-date. Use this software at your own risk!
