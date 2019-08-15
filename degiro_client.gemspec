@@ -1,6 +1,6 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'degiro/version'
+require 'degiro_client/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'degiro_client'
@@ -17,6 +17,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'faraday', '~> 0.13.1'
   spec.add_dependency 'faraday-cookie_jar', '~> 0.0.6'
+  spec.add_dependency 'faraday-detailed_logger', '~> 2.1.3'
 
   spec.add_development_dependency 'pry', '~> 0.12.2'
   spec.add_development_dependency 'rubocop', '~> 0.51.0'

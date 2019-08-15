@@ -1,6 +1,8 @@
 require 'json'
 require 'faraday'
+require 'faraday/detailed_logger'
 require 'faraday-cookie_jar'
+require 'logger'
 
 require_relative 'urls_map.rb'
 require_relative 'user_data.rb'
@@ -16,9 +18,14 @@ module DeGiro
     BASE_TRADER_URL = 'https://trader.degiro.nl'.freeze
 
     def initialize(login, password)
+
+      my_logger = Logger.new("degiro_client.log")
+      my_logger.level = Logger::DEBUG
+
       @conn = Faraday.new(url: BASE_TRADER_URL) do |builder|
         builder.use :cookie_jar
         builder.use Faraday::Response::RaiseError
+        builder.response :detailed_logger, my_logger
         builder.adapter Faraday.default_adapter
       end
 

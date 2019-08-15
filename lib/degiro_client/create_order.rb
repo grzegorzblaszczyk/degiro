@@ -12,7 +12,10 @@ module DeGiro
 
     def create_buy_order(product_id:, size:, price:)
       order = order(BUY_SELL[:buy], product_id, size, price)
-      confirmation_id = JSON.parse(check_order(order).body)['confirmationId']
+      binding.pry
+      response = check_order(order)
+      binding.pry
+      confirmation_id = JSON.parse(response.body)['confirmationId']
       confirm_order(order, confirmation_id)
     end
 
@@ -36,6 +39,7 @@ module DeGiro
     end
 
     def check_order(order)
+      binding.pry
       @connection.post(check_order_url) do |req|
         req.headers['Content-Type'] = 'application/json; charset=UTF-8'
         req.body = order.to_json
