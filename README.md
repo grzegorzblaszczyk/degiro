@@ -10,7 +10,7 @@ DeGiro's API is likely to change in the future and I make no guarantees that I'l
 
 Install the gem with `gem install degiro`. Supported commands are shown below.
 
-```
+```ruby
 require 'degiro'
 
 client = DeGiro::Client.new(login: 'my_login', password: 'my_password')
