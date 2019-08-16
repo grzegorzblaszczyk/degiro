@@ -7,7 +7,7 @@ module DeGiro
       @connection = connection
     end
 
-    def get_transactions(from: (Date.today - (365 * 5)).strftime('%d/%m/%Y'), to: Date.today.strftime('%d/%m/%Y'))
+    def get_transactions(from: (Date.zone.today - (365 * 5)).strftime('%d/%m/%Y'), to: Date.zone.today.strftime('%d/%m/%Y'))
       params = URI.encode_www_form(fromDate: from, toDate: to)
       parse_transactions(JSON.parse(@connection.get(url(params)).body))
     end
