@@ -26,3 +26,15 @@ client.find_product_by_id(id: id)
 client.create_buy_order(product_id: id, size: 10, price: 1000)
 client.create_sell_order(product_id: id, size: 10, price: 1000)
 ```
+
+## How to build this gem
+
+```bash
+gem build degiro_client.gemspec  && gem install degiro_client-[version].gem
+```
+
+## How to publish this gem
+
+```bash
+gem push degiro_client-[version].gem
+```

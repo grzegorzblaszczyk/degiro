@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/grzegorzblaszczyk/degiro'
   spec.licenses      = ['MIT']
   spec.version       = DeGiro::VERSION
-  spec.description   = 'Ruby Client for the unofficial DeGiro API'
+  spec.description   = 'Ruby Client for the unofficial DeGiro API - working version with all basic methods'
   spec.summary       = 'Ruby Client for the unofficial DeGiro API'
   spec.authors       = ['Grzegorz Błaszczyk', 'Tom Van Eyck']
   spec.email         = ['grzegorz.blaszczyk@gmail.com', 'tomvaneyck@gmail.com']
