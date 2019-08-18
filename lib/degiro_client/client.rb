@@ -2,6 +2,7 @@ require 'forwardable'
 
 require_relative 'connection.rb'
 require_relative 'create_order.rb'
+require_relative 'delete_order.rb'
 require_relative 'find_product_by_id.rb'
 require_relative 'find_products.rb'
 require_relative 'get_cash_funds.rb'
@@ -14,6 +15,7 @@ module DeGiro
     extend Forwardable
 
     def_delegators :@create_order,       :create_buy_order, :create_sell_order
+    def_delegators :@delete_order,       :delete_order
     def_delegators :@find_product_by_id, :find_product_by_id
     def_delegators :@find_products,      :find_products
     def_delegators :@get_cash_funds,     :get_cash_funds
@@ -25,6 +27,7 @@ module DeGiro
       connection = Connection.new(login, password)
 
       @create_order       = CreateOrder.new(connection)
+      @delete_order       = DeleteOrder.new(connection)
       @find_product_by_id = FindProductById.new(connection)
       @find_products      = FindProducts.new(connection)
       @get_cash_funds     = GetCashFunds.new(connection)

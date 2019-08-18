@@ -12,7 +12,7 @@ module DeGiro
   class Connection
     extend Forwardable
 
-    def_delegators :@conn, :get, :post
+    def_delegators :@conn, :get, :post, :delete
     attr_reader :urls_map, :user_data, :session_id
 
     BASE_TRADER_URL = 'https://trader.degiro.nl'.freeze

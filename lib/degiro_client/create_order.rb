@@ -20,7 +20,7 @@ module DeGiro
 
     private
 
-    def create_order_with_confirmation(buy_sell:, product_id:, size:, price:)
+    def create_order_with_confirmation(buy_sell, product_id, size, price)
       order = order(buy_sell, product_id, size, price)
       response = check_order(order)
       confirmation_id = JSON.parse(response.body)['data']['confirmationId']
